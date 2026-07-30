@@ -1,0 +1,31 @@
+{
+  "name": "axius-signal",
+  "version": "0.1.0",
+  "description": "Open source error and log handling library for Node.js applications",
+  "license": "Apache-2.0",
+  "type": "commonjs",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./adapters/express": "./src/adapters/express/index.ts",
+    "./adapters/fastify": "./src/adapters/fastify/index.ts",
+    "./adapters/nestjs": "./src/adapters/nestjs/index.ts",
+    "./src/*": "./src/*"
+  },
+  "files": [
+    "src/",
+    "LICENSE"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "@types/node": "^20.14.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

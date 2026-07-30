@@ -1,0 +1,7 @@
+docs/adr/
+demo/
+tests/
+node_modules/
+dist/
+*.log
+.env
