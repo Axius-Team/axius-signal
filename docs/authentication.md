@@ -1,4 +1,4 @@
-## Authentication
+# Authentication
 
 Project Key Authentication
 
