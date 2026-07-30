@@ -1,4 +1,13 @@
-# Axius Signal
+<table border="0">
+  <tr>
+    <td>
+      <img width="80" height="80" alt="axius-ico" src="https://i.imgur.com/LkZ3BJk.png" />
+    </td>
+    <td>
+      <h1>Axius Signal</h1>
+    </td>
+  </tr>
+</table>
 
 Open source error and log handling library for Node.js applications.
 
