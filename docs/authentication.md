@@ -1,4 +1,4 @@
-Axius Signal Authentication
+## Authentication
 
 Project Key Authentication
 
