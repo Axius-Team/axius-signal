@@ -103,6 +103,8 @@ The default sink writes events as JSON strings to the console:
 
 Custom sinks can be provided via the `sink` option in `SignalOptions`.
 
+Envelopes handed to a sink never contain the project key. It is redacted before local output and only attached on the transport path, so a custom sink cannot leak the secret even if it serializes the whole envelope.
+
 ### Transport Layer
 
 The transport layer handles batched, retry-capable delivery of events to the ingestion service. See the [Transport Layer documentation](transport.md) for details.

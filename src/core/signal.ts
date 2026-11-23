@@ -104,7 +104,7 @@ export class Signal {
     if (compatibility === 'blocked') {
       this.sink.write({
         protocol_version: PROTOCOL_VERSION,
-        project_key: this.options.projectKey,
+        project_key: '',
         event_id: 'internal',
         event_type: 'log',
         timestamp: new Date().toISOString(),
@@ -124,7 +124,7 @@ export class Signal {
         Signal.versionWarningShown = true;
         this.sink.write({
           protocol_version: PROTOCOL_VERSION,
-          project_key: this.options.projectKey,
+          project_key: '',
           event_id: 'internal',
           event_type: 'log',
           timestamp: new Date().toISOString(),
@@ -142,7 +142,7 @@ export class Signal {
     if (compatibility === 'degraded-server-ahead') {
       this.sink.write({
         protocol_version: PROTOCOL_VERSION,
-        project_key: this.options.projectKey,
+        project_key: '',
         event_id: 'internal',
         event_type: 'log',
         timestamp: new Date().toISOString(),
@@ -180,7 +180,7 @@ export class Signal {
       if (transportRunning) {
         this.sink.write({
           protocol_version: PROTOCOL_VERSION,
-          project_key: this.options.projectKey,
+          project_key: '',
           event_id: createEventId(),
           event_type: 'log',
           timestamp: new Date().toISOString(),
@@ -199,7 +199,7 @@ export class Signal {
       if (transportRunning) {
         this.sink.write({
           protocol_version: PROTOCOL_VERSION,
-          project_key: this.options.projectKey,
+          project_key: '',
           event_id: createEventId(),
           event_type: 'log',
           timestamp: new Date().toISOString(),

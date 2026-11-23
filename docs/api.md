@@ -94,6 +94,8 @@ interface Sink {
 
 A sink is any object with a `write` method that accepts an `EventEnvelope`. The default sink writes JSON to the console (using `console.log`, `console.error`, etc. depending on event type). Custom sinks can be provided to route events to files, external services, or other loggers.
 
+Every envelope passed to a sink has `project_key` redacted to an empty string. The real project key is only attached to the envelopes sent by the transport layer, because the ingestion service verifies it. This keeps the secret out of local logs regardless of the sink implementation.
+
 ### `LogLevel`
 
 ```typescript
@@ -178,7 +180,7 @@ The wire protocol version that this SDK implements. Currently `'0.1.0'`.
 ```typescript
 const SDK_INFO = {
   name: 'axius-signal-node',
-  version: '0.1.0',
+  version: '0.1.1',
   language: 'node',
   language_version: process.versions.node,
 };

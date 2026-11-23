@@ -93,7 +93,7 @@ export function createSender(
             event_id: 'internal',
             event_type: 'log',
             timestamp: new Date().toISOString(),
-            sdk: { name: 'axius-signal-node', version: '0.1.0', language: 'node', language_version: process.version },
+            sdk: { name: 'axius-signal-node', version: '0.1.1', language: 'node', language_version: process.version },
             environment: 'internal',
             payload: { level: 'warn', message: 'Event batch dropped after 10 failed delivery attempts', context: { batch_id: entry.id } },
           });
@@ -122,7 +122,7 @@ export function createSender(
           event_id: 'internal',
           event_type: 'log',
           timestamp: new Date().toISOString(),
-          sdk: { name: 'axius-signal-node', version: '0.1.0', language: 'node', language_version: process.version },
+          sdk: { name: 'axius-signal-node', version: '0.1.1', language: 'node', language_version: process.version },
           environment: 'internal',
           payload: { level: 'warn', message: 'Project key rejected (401) - dropping all queued events', context: {} },
         });

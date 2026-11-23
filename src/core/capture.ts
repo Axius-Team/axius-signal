@@ -9,6 +9,7 @@ import {
 import { buildErrorPayload } from '../events/error';
 import { buildLogPayload } from '../events/log';
 import { Sink } from '../sinks/types';
+import { redactEnvelopeForSink } from '../sinks/redact';
 import { TransportManager } from '../transport';
 
 export interface CaptureOptions {
@@ -41,7 +42,7 @@ export function createCapture(options: CaptureOptions) {
   function captureError(error: unknown, context?: Record<string, unknown>): CaptureResult {
     const payload = buildErrorPayload(error, context);
     const envelope = buildEnvelope('error', payload);
-    sink.write(envelope);
+    sink.write(redactEnvelopeForSink(envelope));
     if (transport) {
       transport.enqueue(envelope);
     }
@@ -51,7 +52,7 @@ export function createCapture(options: CaptureOptions) {
   function captureLog(level: LogLevel, message: string, context?: Record<string, unknown>): CaptureResult {
     const payload = buildLogPayload(level, message, context);
     const envelope = buildEnvelope('log', payload);
-    sink.write(envelope);
+    sink.write(redactEnvelopeForSink(envelope));
     if (transport) {
       transport.enqueue(envelope);
     }
