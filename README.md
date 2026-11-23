@@ -104,11 +104,11 @@ app.useGlobalFilters(filter as any);
 
 | Document | Description |
 |---|---|
-| [API Reference](docs/api.md) | Full API reference for the Signal class and all exported types |
-| [Architecture](docs/architecture.md) | Module overview, data flow, design principles |
-| [Framework Adapters](docs/adapters.md) | Express, Fastify, NestJS adapter usage guides |
-| [Transport Layer](docs/transport.md) | Batching, queue, retry, backoff, and sender internals |
-| [Authentication](docs/authentication.md) | Project key authentication and security model |
+| [API Reference](https://github.com/Axius-Team/axius-signal/blob/main/docs/api.md) | Full API reference for the Signal class and all exported types |
+| [Architecture](https://github.com/Axius-Team/axius-signal/blob/main/docs/architecture.md) | Module overview, data flow, design principles |
+| [Framework Adapters](https://github.com/Axius-Team/axius-signal/blob/main/docs/adapters.md) | Express, Fastify, NestJS adapter usage guides |
+| [Transport Layer](https://github.com/Axius-Team/axius-signal/blob/main/docs/transport.md) | Batching, queue, retry, backoff, and sender internals |
+| [Authentication](https://github.com/Axius-Team/axius-signal/blob/main/docs/authentication.md) | Project key authentication and security model |
 
 ## License
 
