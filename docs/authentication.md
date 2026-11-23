@@ -35,6 +35,7 @@ Security Model
 - The SDK never rotates, refreshes, or modifies the key. Rotation and revocation are entirely server-side operations in the Axius Pro dashboard.
 - If a key is revoked, the next SDK request receives a 401 response. The transport layer handles this by permanently dropping the queued events for that project and emitting a warning through the local sink.
 - The project key is a static secret in your application configuration. Treat it as sensitive information. Use environment variables or a secret manager to store it.
+- The SDK redacts the project key from every envelope passed to a local sink. Only the transport layer attaches it to outbound requests.
 - Do not commit the project key to source control.
 
 Best Practices
