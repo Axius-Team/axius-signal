@@ -3,23 +3,74 @@
   "version": "0.1.0",
   "description": "Open source error and log handling library for Node.js applications",
   "license": "Apache-2.0",
+  "author": "Axius Team",
   "type": "commonjs",
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./src/index.ts",
-    "./adapters/express": "./src/adapters/express/index.ts",
-    "./adapters/fastify": "./src/adapters/fastify/index.ts",
-    "./adapters/nestjs": "./src/adapters/nestjs/index.ts",
-    "./src/*": "./src/*"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./adapters/express": {
+      "types": "./dist/adapters/express/index.d.ts",
+      "require": "./dist/adapters/express/index.js",
+      "default": "./dist/adapters/express/index.js"
+    },
+    "./adapters/fastify": {
+      "types": "./dist/adapters/fastify/index.d.ts",
+      "require": "./dist/adapters/fastify/index.js",
+      "default": "./dist/adapters/fastify/index.js"
+    },
+    "./adapters/nestjs": {
+      "types": "./dist/adapters/nestjs/index.d.ts",
+      "require": "./dist/adapters/nestjs/index.js",
+      "default": "./dist/adapters/nestjs/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "typesVersions": {
+    "*": {
+      "adapters/express": ["dist/adapters/express/index.d.ts"],
+      "adapters/fastify": ["dist/adapters/fastify/index.d.ts"],
+      "adapters/nestjs": ["dist/adapters/nestjs/index.d.ts"]
+    }
   },
   "files": [
-    "src/",
+    "dist",
+    "CHANGELOG.md",
+    "README.md",
     "LICENSE"
   ],
+  "sideEffects": false,
   "scripts": {
+    "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\"",
     "typecheck": "tsc --noEmit",
-    "build": "tsc"
+    "build": "npm run clean && tsc",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run typecheck"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Axius-Team/axius-signal.git"
+  },
+  "homepage": "https://github.com/Axius-Team/axius-signal#readme",
+  "bugs": {
+    "url": "https://github.com/Axius-Team/axius-signal/issues"
+  },
+  "keywords": [
+    "error-tracking",
+    "logging",
+    "observability",
+    "telemetry",
+    "node",
+    "express",
+    "fastify",
+    "nestjs"
+  ],
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "typescript": "^5.5.0",

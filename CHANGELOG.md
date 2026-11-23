@@ -20,3 +20,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - docs/adapters.md: Express, Fastify, and NestJS adapter usage guides with code examples.
   - docs/transport.md: batching, queue, retry, backoff, and sender internals.
   - docs/authentication.md: Project key authentication and security model.
+- `exports` map with `types` conditions for the root and adapter entry points, plus `typesVersions` for classic TypeScript resolution.
+- Package metadata: repository, homepage, bugs, keywords, author and publishConfig.
+- `prepack` and `prepublishOnly` hooks that build and typecheck before publishing.
+- GitHub Actions publish workflow with provenance and public access.
+
+### Fixed
+
+- Entry points now resolve to compiled CommonJS output in `dist` instead of TypeScript sources, so `require('axius-signal')` and `import ... from 'axius-signal'` work after installation.
+- Build output now targets `dist/index.js` with matching declarations, source maps and inline sources; `rootDir` corrected to `src`.
+- Published tarball now contains only the compiled `dist` output plus documentation files, controlled by the `files` allowlist.
+- `package-lock.json` license metadata aligned with Apache-2.0.
+- README documentation links now use absolute GitHub URLs so they resolve on npm.
